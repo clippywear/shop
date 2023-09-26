@@ -292,7 +292,7 @@ function zipFiles() {
 	let urls = []; 
 	for (let a = 0; a < array.length; a++) {
 		let split = array[a].split("-");
-		urls.push(`./assets/files/CLIPPYWEAR_${split[3]}-${split[4]}.package`);
+		urls.push(`CLIPPYWEAR_${split[3]}-${split[4]}.package`);
 	}
     var zip = new JSZip();
     let $a = $("#download-all");
