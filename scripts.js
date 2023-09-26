@@ -49,7 +49,6 @@ $cartNav.on("mouseover", function() {
    	} else {
 		$cartDrop.removeClass("hide");
 		$cartDrop.empty(); 
-		console.log("does it go here", arr)
 		for (let a = 0; a < arr.length; a++) {
 			let $item = $(`<li class="dp-cartItem"> 
 					<img class="dp-photo" src="./assets/clothes/${arr[a]}.png" /> 
@@ -123,6 +122,8 @@ $cartNav.on("click", function() {
 		renderItems(arr);
 		
    	}
+
+   	zipFiles();
 })
 
 $("#about").on("click", function() {
@@ -283,7 +284,7 @@ $(document).on("click", ".clothingItem", function(){
 
 });
 
-$("#download-all").on("click", function() {
+function zipFiles() {
 
 	let arr = localStorage.getItem("clippywear");
 	let array = JSON.parse(arr); 
@@ -294,7 +295,7 @@ $("#download-all").on("click", function() {
 		urls.push(`./assets/files/CLIPPYWEAR_${split[3]}-${split[4]}.package`);
 	}
     var zip = new JSZip();
-    let $a = $("#secretLink");
+    let $a = $("#download-all");
 
   	function request(url) {
         return new Promise(function(resolve) {
@@ -321,10 +322,7 @@ $("#download-all").on("click", function() {
         });
     });
 
-
-    $a.click();
-
-});
+}
 
 
 
@@ -385,4 +383,5 @@ $(document).on("click", ".removeItem", function(){
 	}
 	$("#numItemsInCart").attr("data-num", cartNum);
 
+	zipFiles();
 });
