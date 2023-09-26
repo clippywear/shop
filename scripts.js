@@ -304,6 +304,7 @@ function zipFiles() {
           var httpRequest = new XMLHttpRequest();
           httpRequest.open("GET", url);
           httpRequest.onload = function() {
+          	console.log("what is this.responseText", this.responseText)
             zip.file(url, this.responseText);
             resolve()
           }
