@@ -296,6 +296,8 @@ function zipFiles() {
 	}
     var zip = new JSZip();
     let $a = $("#download-all");
+    urls = [...new Set(urls)];
+	console.log("what are urls", urls)
 
   	function request(url) {
         return new Promise(function(resolve) {
