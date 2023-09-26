@@ -304,7 +304,7 @@ function zipFiles() {
           var httpRequest = new XMLHttpRequest();
           httpRequest.open("GET", url);
           httpRequest.onload = function() {
-          	console.log("what is this.responseText", this.responseText, this)
+          	console.log("what is this.responseText", this.responseText, this, "instance of Blob?", this instanceof Blob)
             zip.file(url, this.responseText);
             resolve()
           }
