@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CLIPPYWEAR | Shop</title>
+	<link rel="stylesheet" type="text/css" href="./styles.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  	<link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+
+</head>
+<body>
+	<div class="position-fixed w-100 top-0 z-5 back-white">
+		<section class="disclaimer"> 
+			<p>CUSTOM CONTENT COMPATIBLE FOR THE SIMS 4 - FREE DOWNLOAD</p>
+		</section>
+		<header>
+			<img src="./assets/logo.png" class="header-logo">
+		</header>
+		<nav class="nav">
+		
+			<div id="home"> <h5 class="mouse"> HOME </h5> </div>
+			<div id="collections"> 
+				<h5 class="mouse"> COLLECTIONS </h5> 
+				<ul class="dpdown hide" id="collections-dropdown">
+				    <li class="mouse collection-dp-click" data-coll="c1">AFTER HOURS COLLECTION '23</li>
+				    <li class="mouse collection-dp-click" data-coll="c2">CLIPPYLAND CLASSICS</li>
+				    <li class="mouse women-clothes">ALL</li>
+			 	</ul>
+			</div>
+			<div id="clothes"> 
+				<h5 class="mouse women-clothes"> CLOTHES </h5> 
+				<ul class="dpdown hide" id="clothes-dropdown">
+				    <li class="mouse women-clothes">WOMEN</li>
+				    <li >MEN (Coming Soon)</li>
+				    <li class="mouse women-clothes" >ALL</li>
+			 	</ul>
+			</div>
+			<div id="about"> 
+				<h5 class="mouse"> ABOUT </h5>
+			</div>
+			<div id="cart"> 
+				<h5 class="mouse"> CART <span id="numItemsInCart" data-num=0> </span></h5>
+				<ul class="dpdown hide" id="cart-dropdown">
+				    <li class="mouse women-clothes">WOMEN</li>
+				    <li >MEN (Coming Soon)</li>
+				    <li class="mouse women-clothes" >ALL</li>
+			 	</ul>
+			</div>
+
+		</nav>
+	</div>
+	<section class="container mt-17 " id="home-content">
+		<div class="row">
+			<div class="col-12 mb-4">
+				<img src="./assets/cover4.png"/>
+			</div>
+			<div class="col-12 mb-4">
+				<h5 class="advertisement">Enhance and elevate your personal style and fashion sensibilities, transcending the ordinary and embracing a new realm of sartorial sophistication and self-expression.</h5>
+			</div>
+			<div class="col-4">				
+				<img src="./assets/pic3.png"/>
+			</div>
+			<div class="col-4">				
+				<img src="./assets/pic2.png"/>
+			</div>
+			<div class="col-4">				
+				<img src="./assets/pic1.png"/>
+			</div>
+			<div class="col-12 mt-4">
+				<img src="./assets/cover5.png"/>
+			</div>
+		</div>
+
+	</section>
+	<section class="container mt-17 hide" id="about-content">
+		<div class="row">
+			<div class="col-12">
+				<img src="./assets/cover3.png"/>
+			</div>
+			<div class="col-12 mt-4">
+				<h2> About Us </h2>
+				<p>Clippywear is your go-to destination for the hottest clubbing and nightlife attire. Specializing in fashion-forward dresses and outfits designed to make a statement after dark, Clippywear knows how to turn heads on the dance floor.
+
+				Their collection features a dazzling array of sequins, metallics, bold prints, and figure-hugging silhouettes, ensuring that you'll shine under the nightclub lights. Whether you're looking for a sleek and sexy little black dress, a daring two-piece ensemble, or a flashy jumpsuit, Clippywear has you covered.
+
+				With an emphasis on comfort and durability, their outfits are made to withstand the rigors of a night out, so you can dance the night away without worrying about wardrobe malfunctions. When you want to make a memorable entrance and dance until dawn, Clippywear is your ultimate nightlife fashion destination. To provide full transparency, it is important to note that Clippywear is presently in its early stages as a brand specializing in crafting custom apparel and accessories for The Sims 4. Clippywear is dedicated to an ongoing process of improvement and continuous learning of creating higher quality clothes in the future. As of right now, we apologize for the glitches you may encounter, especially towards our plus-sized customers. We appreciate your understanding and patience as we continue to refine and enhance our offerings to better serve our discerning clientele.</p>
+			</div>
+
+		</div>
+
+	</section>
+	<section class="container mt-17 hide" id="cart-content">
+		<div class="row">
+			<div class="col-8" id="cart-items">
+				
+			</div>
+			<div class="col-4" id="cart-summary">
+				<div class="ord-sum"><span>Order Value</span> <p>$0.00</p> </div>
+				<div class="ord-sum"><span>Shipping</span> <p>$0.00</p> </div>
+				<div class="ord-sum total"><h5>Total</h5> <h5>$0.00</h5></div>
+				<button class="mt-3 w-100" id="download-all"> Download Now</button> 
+			</div>
+
+		</div>
+
+	</section>
+	<section class="container mt-17 hide" id="clothing-content">
+		<div class="row">
+			<div class="col-2" id="women-sidebar">
+				<ul>
+					<li class="title"> Trending Now </li>
+					<li class="mouse w-view-all"> View All </li>
+					<li class="title"> Shop by Product </li>
+					<li class="mouse w-view-all"> View All </li>
+					<li class="mouse w-cat" data-cloth="shirts"> Tops </li>
+					<li class="mouse w-cat" data-cloth="dresses"> Dresses </li>
+					<li class="mouse w-cat" data-cloth="bodysuits"> Bodysuits </li>
+					<li class="mouse w-cat" data-cloth="pants"> Bottoms </li>
+<!-- 					<li class="mouse" id="w-pants"> Pants </li>
+					<li class="mouse" id="w-pants"> Shorts </li> -->
+					<li class="mouse w-cat" data-cloth="swim"> Swimwear </li>
+					<li class="mouse w-cat" data-cloth="undies"> Lingerie </li>
+					<li class="title"> Clearance </li>
+					<li class="mouse w-view-all"> View all </li>
+				</ul>
+			</div>
+			<div class="col-2 hide" id="collections-sidebar">
+				<ul>
+					<li class="title"> Collections </li>
+					<li class="mouse collection-dp-click" data-coll="c1"> After Hours '23 </li>
+					<li class="mouse collection-dp-click" data-coll="c2"> Clippyland Classics </li>
+				</ul>
+			</div>
+			<div class="col-10 position-relative hide" id="women-main">
+
+			</div>
+
+		</div>
+
+	</section>
+	<section class="container mt-17 hide" id="clothing-details"> 
+		<div class="clothing-detail-container">
+			<div class=" detail-images">
+				<img id="front-details-img" src="./assets/clothes/f-010000-LemonStrapDress-c1-4.png" />
+
+				<img id="back-details-img" src="./assets/clothes/b-010000-LemonStrapDress.png" />
+
+			</div>
+			<div class="detail-text">
+				<h2 id="detail-name"> Lemon Strap Dress </h2>
+				<div class="sizes"> XS SM M <span class="disabled" title="Not Available"> L XL </span> </div>
+				<p class="mt-5"> <b> Description</b> <br/> To provide full transparency, it is important to note that Clippywear is presently in its early stages as a brand specializing in crafting custom apparel and accessories for The Sims 4. Clippywear is dedicated to an ongoing process of improvement and continuous learning of creating higher quality clothes in the future. As of right now, we apologize for the glitches you may encounter, especially towards our plus-sized customers. We appreciate your understanding and patience as we continue to refine and enhance our offerings to better serve our discerning clientele. </p>
+				<div class="button-container mt-3"> 
+					<button id="addToCart"> Add To Cart </button> 
+					<!-- download not working currently -->
+					<a id="downloadLink" href="./assets/cover1.png" download><button> Download Now</button> </a>
+					</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div> These are not real items. They are for The Sims 4 game. </div>
+	</footer>
+  	<script src="jszip.js"></script>
+
+	<script type="text/javascript" src="./data.js"></script>
+
+	<script type="text/javascript" src="./scripts.js"></script>
+</body>
+</html>
