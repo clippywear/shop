@@ -293,6 +293,8 @@ $("#download-all").on("click", function() {
 		let split = array[a].split("-");
 		urls.push(`./assets/files/CLIPPYWEAR_${split[3]}-${split[4]}.package`);
 	}
+    var zip = new JSZip();
+    let $a = $("#secretLink");
 
   	function request(url) {
         return new Promise(function(resolve) {
@@ -306,20 +308,22 @@ $("#download-all").on("click", function() {
         })
       }
 
-      Promise.all(urls.map(function(url) {
-          return request(url)
-        }))
-        .then(function() {
-          console.log(zip);
-          zip.generateAsync({
-              type: "blob"
-            })
-            .then(function(content) {
-              a.download = "folder" + new Date().getTime();
-              a.href = URL.createObjectURL(content);
-              a.innerHTML = "download " + a.download;
-            });
+  Promise.all(urls.map(function(url) {
+      return request(url)
+    }))
+    .then(function() {
+      console.log(zip);
+      zip.generateAsync({
+          type: "blob"
         })
+        .then(function(content) {
+          $a.attr("href", URL.createObjectURL(content));
+        });
+    });
+
+
+    $a.click();
+
 });
 
 
