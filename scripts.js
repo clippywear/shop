@@ -123,7 +123,6 @@ $cartNav.on("click", function() {
 		
    	}
 
-   	zipFiles();
 })
 
 $("#about").on("click", function() {
@@ -284,8 +283,8 @@ $(document).on("click", ".clothingItem", function(){
 
 });
 
-function zipFiles() {
-
+$("#download-all").on("click", function(e) {
+	e.preventDefault();
 	let arr = localStorage.getItem("clippywear");
 	let array = JSON.parse(arr); 
 
@@ -297,35 +296,13 @@ function zipFiles() {
     var zip = new JSZip();
     let $a = $("#download-all");
     urls = [...new Set(urls)];
-	console.log("what are urls", urls)
 
-  	function request(url) {
-        return new Promise(function(resolve) {
-          var httpRequest = new XMLHttpRequest();
-          httpRequest.open("GET", url);
-          httpRequest.onload = function() {
-          	console.log("what is this.responseText", this.responseText, this, "instance of Blob?", this instanceof Blob)
-            zip.file(url, this.responseText);
-            resolve()
-          }
-          httpRequest.send()
-        })
-      }
+    for (let i = 0; i < urls.length; i++) {
 
-  Promise.all(urls.map(function(url) {
-      return request(url)
-    }))
-    .then(function() {
-      console.log(zip);
-      zip.generateAsync({
-          type: "blob"
-        })
-        .then(function(content) {
-          $a.attr("href", URL.createObjectURL(content));
-        });
-    });
+    	window.open(`./assets/files/${urls[i]}`);
+    }
 
-}
+});
 
 
 
@@ -386,5 +363,5 @@ $(document).on("click", ".removeItem", function(){
 	}
 	$("#numItemsInCart").attr("data-num", cartNum);
 
-	zipFiles();
+	// zipFiles();
 });
