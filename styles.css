@@ -326,7 +326,7 @@ footer {
   #cart-items {
     width:100%;
   }
-  #cart-summary, #women-main, #collections-sidebar, .nav{
+  #cart-summary, #women-main, #collections-sidebar, .nav, .detail-images, .detail-text{
   	width:100%;
   }
   #women-sidebar{
@@ -337,6 +337,9 @@ footer {
   }
   #collections-sidebar {
   	text-align: center;
+  }
+  .clothing-detail-container{
+  	flex-wrap: wrap;
   }
 
 
