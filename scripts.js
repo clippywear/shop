@@ -243,7 +243,16 @@ $(document).ready(function () {
 		if (arr.length !== 0)
 			$("#numItemsInCart").attr("data-num", cartNum).text("(" + cartNum + ")");
 	}
+
+	$(".popup-modal").delay(2000).fadeIn(500);
+	$(".blackscreen").delay(2000).fadeIn(500);
+
 });
+
+$(".exit-popup, .blackscreen, .email-input").on("click", function() {
+	$(".popup-modal").fadeOut(100);
+	$(".blackscreen").fadeOut(100);
+})
 
 $(document).on("mouseover", ".clothingItem", function(){
 	let splitArrFrontPhoto = $(this).attr("data-info").split("-");
